@@ -50,7 +50,10 @@ export class HeroService {
   };
 
   updateHero(hero: Hero) {
-    return this.httpClient.put(this.heroesUrl, hero, this.httpOptions)
+    return this.httpClient.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`updated hero id = ${hero.id}`)),
+      catchError(this.handleError<any>('update hero'))
+    );
   }
 
 }
