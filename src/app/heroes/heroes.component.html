@@ -1,5 +1,15 @@
 <h2>HEROES</h2>
 
+<div>
+    <p>Add new hero:</p>
+    <label>
+        Name:
+        <input #heroName />
+    </label>
+    <button (click)="addHero(heroName.value); heroName.value=''">Add</button>
+</div>
+
+
 <ul class="heroes">
     <li *ngFor="let hero of heroes">
         <a routerLink="/detail/{{hero.id}}">
