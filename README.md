@@ -7,4 +7,5 @@ Functionalities:
 - updating a hero,
 - adding a new hero,
 - deleting a hero,
+- searching heroes by name,
 - simple naviagtion between few views.
